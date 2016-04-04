@@ -248,7 +248,7 @@ class DocumentEditFormView(MongonautViewMixin, FormView, MongonautFormViewMixin)
 
         return context
 
-    def get_form(self, Form):
+    def get_form(self, Form=None):
         self.set_mongoadmin()
         context = self.set_permissions_in_context({})
 
@@ -299,7 +299,7 @@ class DocumentAddFormView(MongonautViewMixin, FormView, MongonautFormViewMixin):
 
         return context
 
-    def get_form(self, Form):
+    def get_form(self, Form=None):
         self.set_mongonaut_base()
         self.document_type = getattr(self.models, self.document_name)
         self.form = Form()
